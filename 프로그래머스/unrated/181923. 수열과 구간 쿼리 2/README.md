@@ -1,3 +1,36 @@
+다시풀어본 코드
+class Solution {
+    fun solution(arr: IntArray, queries: Array<IntArray>): IntArray {
+        var answer: IntArray = intArrayOf()
+
+        for(i in 0..queries.size-1){
+            // s, e, k 추출
+            val s = queries[i][0]
+            val e = queries[i][1]
+            val k = queries[i][2]
+            // arr[s]부터 arr[e]의 값중 k보다 큰값을 저장하기 위한 배열 생성 
+            var array1 = intArrayOf()
+            for(i in s..e){
+                // k 보다 큰값을 배열에 저장
+                if(k < arr[i]){
+                    array1 = array1.plus(arr[i])
+                }
+            }
+            // 배열이 비어있다면 -1 저장
+            if(array1.isEmpty()){
+                answer = answer.plus(-1)
+            }else{
+                // 배열에 값이있다면 정렬하고 제일 작은수 추출하여 저장
+                val sortmin = array1.sorted()
+                val min = sortmin.first()
+                answer = answer.plus(min)
+            }
+        }   
+        return answer
+    }
+}
+
+
 # [unrated] 수열과 구간 쿼리 2 - 181923 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181923) 
