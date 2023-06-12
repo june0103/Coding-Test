@@ -1,4 +1,6 @@
-다시풀어본 코드
+배열을 새로 생성하여 값을 비교하지않고 바로 비교한 수정한 코드
+
+```kotlin
 class Solution {
     fun solution(arr: IntArray, queries: Array<IntArray>): IntArray {
         var answer: IntArray = intArrayOf()
@@ -29,7 +31,7 @@ class Solution {
         return answer
     }
 }
-
+```
 
 # [unrated] 수열과 구간 쿼리 2 - 181923 
 
